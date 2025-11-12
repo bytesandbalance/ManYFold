@@ -71,10 +71,10 @@ const ChapterCarousel = () => {
       <div className="max-w-7xl mx-auto space-y-12">
         <div className="text-center space-y-4">
           <h2 className="text-4xl md:text-5xl font-display font-bold text-glow">
-            Chapter Gallery
+            Fold Gallery
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Explore all 9 chapters of this cosmic odyssey. Swipe to navigate through the story.
+            Explore all 9 folds of this cosmic odyssey. Swipe to navigate through the story.
           </p>
         </div>
         
@@ -98,7 +98,7 @@ const ChapterCarousel = () => {
         
         <div className="text-center">
           <p className="text-sm text-muted-foreground">
-            Use arrow buttons or swipe to navigate • {chapters.length} chapters available
+            Use arrow buttons or swipe to navigate • {chapters.length} folds available
           </p>
         </div>
       </div>
