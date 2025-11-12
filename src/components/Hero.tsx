@@ -11,13 +11,13 @@ const Hero = () => {
       {/* Content */}
       <div className="relative z-10 max-w-4xl mx-auto text-center space-y-8">
         <h1 className="text-5xl md:text-7xl font-display font-bold text-glow animate-fade-in">
-          Cosmic Chronicles
+         Manifold
         </h1>
         
         <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto leading-relaxed animate-fade-in" style={{ animationDelay: '0.2s' }}>
-          Embark on an epic journey through the cosmos. Experience 9 chapters of mind-bending 
-          sci-fi adventure, where humanity's future hangs in the balance across distant galaxies 
-          and parallel dimensions.
+          Step into the Manifold: a multiverse of intertwined realities. Explore 9 chapters of mind-bending 
+          sci-fi, where cosmic anomalies, quantum curiosities, and parallel dimensions challenge the very fabric 
+          of space, time, and existence.
         </p>
         
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-in" style={{ animationDelay: '0.4s' }}>
