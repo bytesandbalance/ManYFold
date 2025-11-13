@@ -15,7 +15,7 @@ const Hero = () => {
         </h1>
 
         <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto leading-relaxed animate-fade-in" style={{ animationDelay: '0.2s' }}>
-          Step into the Manifold: a multiverse of intertwined realities. Explore 9 folds of mind-bending
+          Step into the ManYFold: a multiverse of intertwined realities. Explore 9 folds of mind-bending
           sci-fi, where cosmic anomalies, quantum curiosities, and parallel dimensions challenge the very fabric
           of space, time, and existence.
         </p>
