@@ -1,7 +1,23 @@
-import { Coffee, Download } from "lucide-react";
+import { useState } from "react";
+import { Coffee, Download, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const Hero = () => {
+  const [showModal, setShowModal] = useState(false);
+  const [downloadUrl, setDownloadUrl] = useState<string | null>(null);
+
+  const handleDownloadClick = (url: string) => {
+    setDownloadUrl(url);
+    setShowModal(true);
+  };
+
+  const handleProceedDownload = () => {
+    if (downloadUrl) {
+      window.open(downloadUrl, "_blank");
+    }
+    setShowModal(false);
+  };
+
   return (
     <section className="relative min-h-[60vh] flex items-center justify-center px-4 py-20 overflow-hidden">
       {/* Cosmic background effect */}
@@ -57,21 +73,34 @@ const Hero = () => {
             </Button>
           </a>
 
-          {/* Download button */}
-          <a
-            href="https://drive.google.com/uc?export=download&id=1wjy28p_SoXvrUzf46Hgm7R6CYovRDzYK"
-            target="_blank"
-            rel="noopener noreferrer"
+          {/* Download buttons */}
+          <Button
+            size="lg"
+            variant="secondary"
+            className="border-primary/50 bg-primary/5 text-primary hover:bg-primary/20 font-display text-lg px-8 py-6 transition-all duration-300 hover:scale-105"
+            onClick={() =>
+              handleDownloadClick(
+                "https://drive.google.com/uc?export=download&id=1wjy28p_SoXvrUzf46Hgm7R6CYovRDzYK"
+              )
+            }
           >
-            <Button
-              size="lg"
-              variant="secondary"
-              className="border-primary/50 bg-primary/5 text-primary hover:bg-primary/20 font-display text-lg px-8 py-6 transition-all duration-300 hover:scale-105"
-            >
-              <Download className="mr-2 h-5 w-5" />
-              Download PDF
-            </Button>
-          </a>
+            <Download className="mr-2 h-5 w-5" />
+            Download Comic
+          </Button>
+
+          <Button
+            size="lg"
+            variant="secondary"
+            className="border-primary/50 bg-primary/5 text-primary hover:bg-primary/20 font-display text-lg px-8 py-6 transition-all duration-300 hover:scale-105"
+            onClick={() =>
+              handleDownloadClick(
+                "https://drive.google.com/uc?export=download&id=YOUR_KNOWLEDGE_PDF_ID"
+              )
+            }
+          >
+            <Download className="mr-2 h-5 w-5" />
+            Download Knowledge Nuggets
+          </Button>
         </div>
 
         <p
@@ -81,6 +110,45 @@ const Hero = () => {
           Download freely — your support keeps new folds unfolding ☕
         </p>
       </div>
+
+      {/* Modal */}
+      {showModal && (
+        <div className="fixed inset-0 bg-black/70 flex items-center justify-center z-50">
+          <div className="bg-background rounded-2xl shadow-xl p-8 max-w-sm w-full relative text-center border border-primary/20">
+            <button
+              onClick={() => setShowModal(false)}
+              className="absolute top-3 right-3 text-muted-foreground hover:text-foreground"
+            >
+              <X className="w-5 h-5" />
+            </button>
+            <h2 className="text-2xl font-display mb-4">Support the Journey 🌌</h2>
+            <p className="text-muted-foreground mb-6">
+              This project exists thanks to explorers like you. Would you like to
+              support ManYFold by gifting a coffee (€3.99)?
+            </p>
+
+            <div className="flex flex-col gap-3">
+              <a
+                href="https://www.paypal.com/paypalme/pflashgary/3.99EUR"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Button className="bg-primary text-primary-foreground">
+                  <Coffee className="mr-2 h-5 w-5" />
+                  Gift a Coffee - €3.99
+                </Button>
+              </a>
+              <Button
+                variant="secondary"
+                onClick={handleProceedDownload}
+                className="text-primary hover:bg-primary/10"
+              >
+                Continue to Download
+              </Button>
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 };
