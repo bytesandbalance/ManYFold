@@ -30,7 +30,7 @@ const Hero = () => {
           </Button>
 
           <a
-            href="https://www.paypal.com/paypalme/yourpaypalname/3.99EUR"
+            href="https://www.paypal.com/paypalme/pflashgary/3.99EUR"
             target="_blank"
             rel="noopener noreferrer"
           >
