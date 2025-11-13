@@ -15,7 +15,7 @@ const Hero = () => {
         </h1>
 
         <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto leading-relaxed animate-fade-in" style={{ animationDelay: '0.2s' }}>
-          Step into the Manifold: a multiverse of intertwined realities. Explore 9 chapters of mind-bending
+          Step into the Manifold: a multiverse of intertwined realities. Explore 9 folds of mind-bending
           sci-fi, where cosmic anomalies, quantum curiosities, and parallel dimensions challenge the very fabric
           of space, time, and existence.
         </p>
@@ -26,7 +26,7 @@ const Hero = () => {
             className="bg-primary hover:bg-primary/90 text-primary-foreground font-display text-lg px-8 py-6 glow-primary transition-all duration-300 hover:scale-105"
             onClick={() => document.getElementById('chapters')?.scrollIntoView({ behavior: 'smooth' })}
           >
-            Explore Chapters
+            Explore Folds
           </Button>
 
           <a
